@@ -22,19 +22,19 @@ extern int gesture_idx;
 extern float radius;
 extern int segm;
 
-int color[3] = {255, 255, 255};
+float color[3] = {0, 1, 0};
 
 void drawcircle(float cx, float cy, float r, int num_segments) {
+	glLineWidth(3);
     glBegin(GL_LINE_LOOP);    
-    float x, y, theta;    
-
-    glColor3d(color[0],color[1],color[2]);
-    for (int ii = 0; ii < num_segments; ii++){
-        theta = 2.0f*3.1415926f*float(ii)/float(num_segments);
-        x = r*cosf(theta);
-        y = r*sinf(theta);
-        glVertex2d(x+cx, y+cy);
-    }
+    	float x, y, theta;        	
+	    glColor3d(color[0],color[1],color[2]);
+	    for (int ii = 0; ii < num_segments; ii++){
+	        theta = 2.0f*3.1415926f*float(ii)/float(num_segments);
+	        x = r*cosf(theta);
+	        y = r*sinf(theta);
+	        glVertex2d(x+cx, y+cy);
+	    }
     glEnd();
 }
 
@@ -56,9 +56,9 @@ void glswitch(int _gesture_idx, int _gesture_state){
 			break;
 		case 4:{			
 			srand(time(NULL));  
-			color[0] = rand()%106;
-			color[1] = rand()%106;
-			color[2] = rand()%106;
+			color[0] = (double)rand()/RAND_MAX;
+			color[1] = (double)rand()/RAND_MAX;
+			color[2] = (double)rand()/RAND_MAX;
 			break;
 		}
 		default:
