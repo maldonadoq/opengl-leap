@@ -1,0 +1,6 @@
+*.out
+*.csv
+*.py
+*.pyc
+#*.dat
+*.h.gch
