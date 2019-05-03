@@ -95,6 +95,9 @@ void TListener::onFrame(const Controller& controller) {
     for (int g = 0; g < gestures.count(); ++g) {
         Gesture gesture = gestures[g];
 
+        std::cout << gesture.duration() << " ms\n";
+
+
         switch (gesture.type()) {
             case Gesture::TYPE_CIRCLE:{
                 CircleGesture circle = gesture;

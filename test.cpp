@@ -4,8 +4,8 @@
 #include <cstring>
 
 #include "Leap.h"
-#include "usr/listener.h"
-#include "usr/ogl.h"
+#include "src/listener.h"
+#include "src/ogl.h"
 
 float initx = 0;
 float inity = 0;
@@ -28,7 +28,7 @@ int gesture_idx = -1;
 int gesture_state = 0;
 
 float radius = 50;  // circle
-int segm = 50;      // circle's segment
+int   segm = 10;    // circle's segment
 
 using namespace Leap;
 
